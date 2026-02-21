@@ -1,8 +1,27 @@
 import { provideZonelessChangeDetection } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
+import { beforeAll } from 'vitest';
+
 import { App } from './app';
 
 describe('App', () => {
+
+  beforeAll(async () => {
+    try {
+      if (typeof process !== 'undefined' && process.versions.node) {
+        const { readFileSync } = await import('node:fs');
+        const { ɵresolveComponentResources: resolveComponentResources } = await import('@angular/core');
+
+        await resolveComponentResources(url =>
+          Promise.resolve(readFileSync(new URL(url, import.meta.url), 'utf-8'))
+        );
+      }
+    } catch (error) {
+      console.warn('Failed to resolve component resources. Tests may fail if components have external templates or styles.');
+      return;
+    }
+  });
+
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [App],
