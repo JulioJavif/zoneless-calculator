@@ -1,0 +1,45 @@
+<div class="w-screen h-40 bg-gradient-to-b from-gray-800 to-gray-700 flex items-end text-right"
+style="max-width: 400px;">
+  <div class="w-full py-5 px-6 text-6xl text-white font-thin">
+    @if(subResultText() !== '0') {
+      <span class="text-4xl"> {{ subResultText() }} {{ lastOperator() }} </span>
+      <br>
+    }
+    <span> {{ resultText() }} </span>
+  </div>
+</div>
+<div class="grid grid-cols-4 w-full bg-gradient-to-b from-violet-500 to-violet-700">
+  <div class="col-span-3 grid grid-cols-3">
+    <div class="col-span-3 grid grid-cols-3">
+      <app-calculator-button (onClick)="handleButtonClick($event)">C</app-calculator-button>
+      <app-calculator-button (onClick)="handleButtonClick($event)">+/-</app-calculator-button>
+      <app-calculator-button isCommand="true" (onClick)="handleButtonClick($event)">÷</app-calculator-button>
+      <!-- <app-calculator-button (onClick)="handleButtonClick($event)">%</app-calculator-button> -->
+    </div>
+    <div class="col-span-3 grid grid-cols-3">
+      <app-calculator-button (onClick)="handleButtonClick($event)">7</app-calculator-button>
+      <app-calculator-button (onClick)="handleButtonClick($event)">8</app-calculator-button>
+      <app-calculator-button (onClick)="handleButtonClick($event)">9</app-calculator-button>
+    </div>
+    <div class="col-span-3 grid grid-cols-3">
+      <app-calculator-button (onClick)="handleButtonClick($event)">4</app-calculator-button>
+      <app-calculator-button (onClick)="handleButtonClick($event)">5</app-calculator-button>
+      <app-calculator-button (onClick)="handleButtonClick($event)">6</app-calculator-button>
+    </div>
+    <div class="col-span-3 grid grid-cols-3">
+      <app-calculator-button (onClick)="handleButtonClick($event)">1</app-calculator-button>
+      <app-calculator-button (onClick)="handleButtonClick($event)">2</app-calculator-button>
+      <app-calculator-button (onClick)="handleButtonClick($event)">3</app-calculator-button>
+    </div>
+    <div class="col-span-3 grid grid-cols-3">
+      <app-calculator-button (onClick)="handleButtonClick($event)" isDoubleSize="true">0</app-calculator-button>
+      <app-calculator-button (onClick)="handleButtonClick($event)">.</app-calculator-button>
+    </div>
+  </div>
+  <div class="col-span-1 grid grid-cols-1 grid-rows-5">
+    <app-calculator-button isCommand="true" (onClick)="handleButtonClick($event)">x</app-calculator-button>
+    <app-calculator-button isCommand="true" (onClick)="handleButtonClick($event)">-</app-calculator-button>
+    <app-calculator-button isCommand="true" (onClick)="handleButtonClick($event)">+</app-calculator-button>
+    <app-calculator-button isCommand="true" isVerticalDoubleSize="true" (onClick)="handleButtonClick($event)">=</app-calculator-button>
+  </div>
+</div>

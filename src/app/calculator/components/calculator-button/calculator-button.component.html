@@ -1,0 +1,11 @@
+<!-- <div class="w-1/4 border-r border-b border-indigo-400">
+</div> -->
+<button [class.bg-violet-700]="isCommand()"
+[class.bg-opacity-20]="isCommand()"
+[class.is-pressed]="isPressed()"
+[class.h-full]="isVerticalDoubleSize()"
+class="w-full h-16 outline-none focus:outline-none hover:bg-violet-800 hover:bg-opacity-20 text-white text-opacity-20 text-xl font-light"
+(click)="handleClick()"
+#button>
+  <ng-content></ng-content>
+</button>
