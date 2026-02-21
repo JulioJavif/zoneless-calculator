@@ -29,6 +29,19 @@ describe('App', () => {
     }).compileComponents();
   });
 
+  /**
+   * This is a simple test to verify that the testing framework is working correctly. It should be removed or replaced with actual tests for the App component.
+   */
+  it('should be 4', () => {
+    // Arrage
+    const num1 = 1;
+    const num2 = 3;
+    // Act
+    const result = num1 + num2;
+    // Assert
+    expect(result).toBe(4);
+  })
+
   it('should create the app', () => {
     const fixture = TestBed.createComponent(App);
     const app = fixture.componentInstance;
